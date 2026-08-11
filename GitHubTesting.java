@@ -11,6 +11,9 @@ public class GitHubTesting {
         int add  = add(3,4);
         System.out.println(add);
 
+        int sub = sub(4,2);
+        System.out.println(sub);
+
 
     }
 
@@ -18,6 +21,11 @@ public class GitHubTesting {
 
     public static int add(int a, int b){
         return (a+b);
+    }
+
+
+    public static int sub(int a, int b){
+        return (a-b);
     }
 
 }
