@@ -1,0 +1,14 @@
+name: Hello world
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Main branch message
+        run: echo "Code pushed to main"
