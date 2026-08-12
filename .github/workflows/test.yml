@@ -1,15 +1,14 @@
-name: Hello world
+name: pull request workflow
 
 on:
-  push:
-    branches:
-      - main
-      - dev
+  pull_request:
+
 
 jobs:
-  main-job:
+  pr-job:
     runs-on: ubuntu-latest
 
+
     steps:
-      - name: Main branch message
-        run: echo "Code pushed to main"
+      - name: pull request created
+        run: echo "A new pull request has been created"
