@@ -1,21 +1,20 @@
-name: assigning a pull request
+name: pull request validation
 
 
 on:
- pull_request:
-   types: opened
-
-
-permissions: 
-  pull-requests: write
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 
 jobs:
-  pr_assignment:
+  pr-validation:
     runs-on: ubuntu-latest
 
     steps:
-      - name: pull request assignment
-        run: gh pr edit ${{ github.event.pull_request.number }} --add-assignee sakaraynikhil
-      
-  
+      - name: pr is validating
+        run: echo "pr is getting validated"
+
+      - name: pr validation is success
+        run: echo "pr is successfully validated"
