@@ -1,14 +1,21 @@
-name: pull request workflow
+name: assigning a pull request
+
 
 on:
-  pull_request:
+ pull_request:
+   types: opened
+
+
+permissions: 
+  pull-requests: write
 
 
 jobs:
-  pr-job:
+  pr_assignment:
     runs-on: ubuntu-latest
 
-
     steps:
-      - name: pull request created
-        run: echo "A new pull request has been created"
+      - name: pull request assignment
+        run: gh pr edit ${{ github.event.pull_request.number }} --add-assignee sakaraynikhil
+      
+  
